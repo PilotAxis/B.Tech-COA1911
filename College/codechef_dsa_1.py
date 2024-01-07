@@ -1,19 +1,14 @@
 def resize_array(arr):
-    # Calculate the sum of the even and odd elements
     even_sum = sum(x for x in arr if x % 2 == 0)
     odd_sum = sum(x for x in arr if x % 2 != 0)
     
-    # Append the negative of the sums to the array
-    if even_sum != 0:
-        arr.append(-even_sum)
-    if odd_sum != 0:
-        arr.append(-odd_sum)
-    
-    return arr
+    num_add = even_sum - odd_sum
+    return num_add
 
-# Test the function
-arr = [1, 2, 3, 4, 5]
-print(resize_array(arr))  # Output: [1, 2, 3, 4, 5, -6, -9]
+arr = [1,2,3,4,5]
+print(resize_array(arr))  
 
-# Time Complexity: O(n)
-# Space Complexity: O(n)
+'''
+1. Calculate the sum of even and odd numbers in the array: Iterate over the array and for each number, check if it is even or odd. If it's even, add it to the sum of even numbers. If it's odd, add it to the sum of odd numbers.
+2. Find the difference between the sum of even and odd numbers: Subtract the sum of odd numbers from the sum of even numbers. The result is the number that needs to be added to the array to balance it.
+'''
